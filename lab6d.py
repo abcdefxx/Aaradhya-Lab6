@@ -1,11 +1,16 @@
-# Add comments before you do anything else.
-
 #!/usr/bin/env python3
-# Author:
-# Date:
+# Author: Aaradhya Shrestha
+# Date: 2026/11/09
 # Purpose: Creating dictionary.
 # Usage: ./lab6d.py
 
-# TO DO 1: Create function times_ten as instructed in readme.md file. 
+def times_ten(start_index: int, end_index: int):
+    new_dictionary= {}
+    for key in range(start_index, end_index+1):
+        new_dictionary[key]= key*10
+    return new_dictionary
+def main():
+    my_dictionary= times_ten(2,6)
+    print(my_dictionary)
 
-# TO DO 2: Run the script.
+main() 
