@@ -1,13 +1,40 @@
-# Add comments before you do anything else.
-
 #!/usr/bin/env python3
-# Author:
-# Date:
+# Author: Aaradhya Shrestha
+# Date: 11/09
 # Purpose: Use Dictionary for Structured Data.
 # Usage: ./lab6h.py
 
-# TO DO 1: Copy the code from lab6g.py and paste here.
-# TO DO 2: Create function find_movie().
-# TO DO 3: Call the function as instructed in readme.md file.
-# TO DO 4: Run the script. Take screenshot of code and script.
+def add_movie(database, name, director, year, runtime):
+    movie = {"name": name, "director": director, "year": year, "runtime": runtime}
+    database.append(movie)
+
+def find_movie(database, search_word):
+   found= []
+   for movie in database:
+      if search_word.lower() in movie["name"].lower():
+        found.append(movie)
+   return found
+
+
+def main():
+    database=[]
+    add_movie(database, "The Dark Knight", "Christopher Nolan", 2008, 152)
+    add_movie(database, "The Dark Knight Rises", "Christopher Nolan", 2012, 164)
+    add_movie(database, "Inception", "Christopher Nolan", 2010, 148)
+    add_movie(database, "Interstellar", "Christopher Nolan", 2014, 169)
+
+    for movie in database:
+     print(movie)
+
+    print("--------------")
+    print("Search results for 'DARK':")
+    for movie in find_movie(database, "DARK"):
+       print(movie)
+
+    print("--------------")
+    print("Search results for 'interstellar':")
+    for movie in find_movie(database, "interstellar"):
+       print(movie)   
+    
+main()
 
